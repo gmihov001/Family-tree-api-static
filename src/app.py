@@ -39,7 +39,6 @@ def post_member():
     jackson_family.add_member(member)
     return "Posted", 200
 
-
 @app.route('/member/<int:id>', methods=['GET'])
 def get_member(id):
     # this is how you can use the Family datastructure by calling its methods
