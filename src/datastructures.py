@@ -24,18 +24,18 @@ class FamilyStructure:
         # fill this method and update the return
         return None
 
-    def delete_member(self, id):
+    def delete_member(self, age):
         # fill this method and update the return
         for position in range(len(self._members)):
-            if self._members[position]["id"] == id:
+            if self._members[position]["age"] == age:
                 self._members.pop(position)
                 return None
         
 
-    def get_member(self, id):
+    def get_member(self, age):
         # fill this method and update the return
         for m in self._members:
-            if m["id"] == int(id):
+            if m["age"] == int(age):
                 return m
 
         return None
