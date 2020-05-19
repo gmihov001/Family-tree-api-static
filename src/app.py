@@ -35,8 +35,11 @@ def handle_hello():
 @app.route('/member', methods=['POST'])
 def post_member():
     member = request.json
-    print("add", member)
-    jackson_family.add_member(member)
+    if member["id"] == None:
+        member["id"] = jackson_family._generateId()
+        jackson_family.add_member(member)
+    else:
+        jackson_family.add_member(member)    
     return "Posted", 200
 
 @app.route('/member/<int:id>', methods=['GET'])

@@ -20,7 +20,6 @@ class FamilyStructure:
 
     def add_member(self, member):
         self._members.append(member)
-        # fill this method and update the return
         return None
 
     def delete_member(self, age):
@@ -30,13 +29,11 @@ class FamilyStructure:
                 self._members.pop(position)
                 return None
         
-
     def get_member(self, age):
         # fill this method and update the return
         for m in self._members:
             if m["age"] == int(age):
                 return m
-
         return None
 
     # this method is done, it returns a list with all the family members
