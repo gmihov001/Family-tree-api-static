@@ -19,7 +19,11 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        self._members.append(member)
+        if member['id']:
+            self._members.append(member)
+        else:
+            member['id'] = self._generateId()
+            self._members.append(member)    
         return None
 
     def delete_member(self, age):
