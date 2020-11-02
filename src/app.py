@@ -52,6 +52,7 @@ def get_member(id):
 @app.route('/member/<int:id>', methods=['DELETE'])
 def delete_member(id):
     member = jackson_family.delete_member(id)
+    print("Deleted member: ", member)
     family = jackson_family.get_all_members()
     response_body = {
         "deleted": member,
