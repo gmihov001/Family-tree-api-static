@@ -36,8 +36,12 @@ def handle_hello():
 def post_member():
     member = request.json        
     jackson_family.add_member(member)
-    members = jackson_family.get_all_members()    
-    return "Posted with id number ", 200
+    members = jackson_family.get_all_members()   
+    response = {
+        "status": "Family member posted with id"
+        "family": members
+    } 
+    return jsonify(response), 200
 
 @app.route('/member/<int:id>', methods=['GET'])
 def get_member(id):
