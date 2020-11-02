@@ -38,7 +38,7 @@ def post_member():
     jackson_family.add_member(member)
     members = jackson_family.get_all_members()   
     response = {
-        "status": "Family member posted with id"
+        "status": "Family member posted with id",
         "family": members
     } 
     return jsonify(response), 200
