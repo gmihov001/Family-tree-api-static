@@ -1,7 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
-import os
+import os, json
 from flask import Flask, request, jsonify, url_for
 from flask_cors import CORS
 from utils import APIException, generate_sitemap
@@ -35,7 +35,8 @@ def handle_hello():
 @app.route('/member', methods=['POST'])
 def post_member():
     member = request.json        
-    jackson_family.add_member(member)    
+    jackson_family.add_member(member)
+    members = jackson_family.get_all_members()    
     return "Posted with id number ", 200
 
 @app.route('/member/<int:id>', methods=['GET'])
