@@ -54,6 +54,7 @@ def delete_member(id):
     member = jackson_family.delete_member(id)
     family = jackson_family.get_all_members()
     response_body = {
+        "deleted": member,
         "family": family
     }
     return jsonify(response_body), 200
